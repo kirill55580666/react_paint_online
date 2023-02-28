@@ -7,6 +7,8 @@ const WServer = require('express-ws')(app)
 const aWss = WServer.getWss()
 const cors = require('cors')
 
+const serverless = require('serverless-http')
+
 const PORT = process.env.PORT || 5000
 
 app.use(cors())
@@ -67,7 +69,9 @@ app.get('/image', (req, res) => {
 //     }
 // })
 
-app.listen(PORT, () => console.log(`server on port ${PORT}`))
+//app.listen(PORT, () => console.log(`server on port ${PORT}`))
+
+module.exports.handler = serverless(app)
 
 const connectionHandler = (ws, msg) => {
     ws.id = msg.id
