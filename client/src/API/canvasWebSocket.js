@@ -7,7 +7,7 @@ import Eraser from "../tools/Eraser";
 import Line from "../tools/Line";
 
 const canvasWebSocket = (canvasRef, id) => {
-    const socket = new WebSocket('ws://localhost:5000/')
+    const socket = new WebSocket('ws://main--soft-crumble-e05c07.netlify.app//')
     canvasState.setSocket(socket)
     canvasState.setSessionId(id)
     toolState.setTool(new Brush(canvasRef.current, socket, id))

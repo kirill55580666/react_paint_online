@@ -2,7 +2,7 @@ import axios from "axios";
 
 const firstRender = (canvasRef, id) => {
     let ctx = canvasRef.current.getContext('2d')
-    axios.get(`http://localhost:5000/image?id=${id}`)
+    axios.get(`https://main--soft-crumble-e05c07.netlify.app/image?id=${id}`)
         .then(response => {
             const img = new Image()
             img.src = response.data
