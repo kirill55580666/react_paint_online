@@ -71,6 +71,7 @@ app.get('/image', (req, res) => {
 
 //app.listen(PORT, () => console.log(`server on port ${PORT}`))
 
+module.exports = app;
 module.exports.handler = serverless(app)
 
 const connectionHandler = (ws, msg) => {
